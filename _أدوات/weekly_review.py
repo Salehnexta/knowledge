@@ -1,4 +1,4 @@
-"""Weekly idea review: writes <project>/تشغيل/المراجعة الأسبوعية.md for every project folder in the vault.
+"""Weekly idea review: writes <project>/تشغيل/المراجعة الأسبوعية - <project>.md (unique name per project) for every project folder in the vault.
 Lists new ideas (last 7 days), approved ideas idle more than 30 days, and deferred ideas whose review date has come."""
 import datetime as dt, pathlib, re, subprocess
 
@@ -32,7 +32,7 @@ for proj in sorted(d for d in ROOT.iterdir() if (d / "أفكار").is_dir()):
             idle.append(f"- {link}: بلا حركة منذ {(today - updated).days} يوماً")
         if st in ("مؤجلة", "معتمدة", "قيد الدراسة") and review and review <= today:
             due.append(f"- {link} ({st}): موعد المراجعة {review}")
-    out = proj / "تشغيل" / "المراجعة الأسبوعية.md"
+    out = proj / "تشغيل" / f"المراجعة الأسبوعية - {proj.name}.md"
     out.parent.mkdir(exist_ok=True)
     sec = lambda title, rows: f"## {title}\n" + ("\n".join(rows) if rows else "- لا شيء") + "\n"
     out.write_text(
