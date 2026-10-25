@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لمحة عن سوقك</title><style>
+@font-face{font-family:Naskh;src:url(../fonts/NotoNaskhArabic-Regular.ttf);font-weight:400}
+@font-face{font-family:Naskh;src:url(../fonts/NotoNaskhArabic-Bold.ttf);font-weight:700}
+:root{--bg:#f6f3ec;--card:#fff;--ink:#1f2a24;--mute:#5d6b63;--acc:#0f5132;--acc2:#e7f0ea;--warn:#8a4b00;--warnbg:#fff4e2;--bad:#a1281e;--line:#e3ded2}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131815;--card:#1c2420;--ink:#eef2ef;--mute:#a9b5ae;--acc:#7fc8a0;--acc2:#23312a;--warn:#f0b56a;--warnbg:#2c2416;--bad:#ff8f84;--line:#2e3833}}
+:root[data-theme="dark"]{--bg:#131815;--card:#1c2420;--ink:#eef2ef;--mute:#a9b5ae;--acc:#7fc8a0;--acc2:#23312a;--warn:#f0b56a;--warnbg:#2c2416;--bad:#ff8f84;--line:#2e3833}
+*{box-sizing:border-box}
+html{direction:rtl}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Naskh,serif;font-size:15px;line-height:1.75}
+.wrap{max-width:390px;margin:0 auto;padding:16px}
+header{padding:8px 4px 4px}
+header .brand{font-weight:700;color:var(--acc);font-size:18px}
+header h1{font-size:22px;margin:2px 0 0}
+header p{margin:0;color:var(--mute);font-size:13px}
+.draft{display:inline-block;background:var(--warnbg);color:var(--warn);font-size:12px;padding:0 8px;border-radius:6px;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 10px;margin:14px 0;position:relative;break-inside:avoid}
+.card h2{font-size:19px;margin:6px 0}
+.card h3{font-size:18px;margin:0 0 6px;padding-left:34px}
+.card h4{font-size:14px;margin:12px 0 6px;color:var(--mute)}
+.num{position:absolute;left:12px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--acc2);color:var(--acc);font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.preview{border:2px solid var(--acc)}
+.tag{display:inline-block;background:var(--acc);color:#fff;font-size:12px;padding:0 10px;border-radius:20px}
+.big{font-size:30px;font-weight:700;color:var(--acc);line-height:1.3}
+.big small{font-size:15px;color:var(--ink);font-weight:400}
+.lead{margin:2px 0 8px}
+.pill{background:var(--acc2);border-radius:10px;padding:8px 10px;margin:8px 0}
+.cta{display:block;width:100%;border:0;border-radius:10px;background:var(--acc);color:#fff;font-family:inherit;font-size:16px;font-weight:700;padding:11px;margin:10px 0 4px}
+ul{padding-right:18px;margin:6px 0}
+li{margin-bottom:3px}
+p{margin:6px 0}
+.note{color:var(--mute);font-size:13px}
+.src{color:var(--mute);font-size:11.5px;border-top:1px dashed var(--line);padding-top:6px;margin-top:10px;line-height:1.6}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0}
+th{font-size:12px;color:var(--mute);font-weight:700;text-align:right;border-bottom:1px solid var(--line);padding:4px 3px;vertical-align:bottom}
+td{border-bottom:1px solid var(--line);padding:5px 3px;vertical-align:top}
+td small{color:var(--mute);font-size:11px}
+.roas td.bad{color:var(--bad)}
+a{color:var(--acc)}
+.bars{margin:6px 0}
+.bar{display:flex;align-items:center;gap:6px;font-size:12.5px;margin:4px 0}
+.bl{width:92px;flex:none;color:var(--mute)}
+.bl.wide{width:130px;color:var(--ink)}
+.bt{flex:1;background:var(--acc2);border-radius:4px;height:12px;overflow:hidden}
+.bt i{display:block;height:100%;background:var(--acc);margin-right:0;margin-left:auto}
+.bv{width:34px;flex:none;text-align:left;font-weight:700}
+.scale{position:relative;height:18px;background:var(--acc2);border-radius:9px;margin:28px 0 2px}
+.scale .mid{position:absolute;top:0;height:100%;background:#9cc9ad;border-radius:9px}
+.scale .me{position:absolute;top:-24px;transform:translateX(50%);text-align:center}
+.scale .me span{display:block;font-size:12px;font-weight:700;color:var(--acc)}
+.scale .me::after{content:"";display:block;width:3px;height:30px;background:var(--acc);margin:0 auto}
+.scale-l{display:flex;justify-content:space-between;font-size:11px;color:var(--mute)}
+.verdict{background:var(--acc2);border-radius:10px;padding:8px 10px;margin:8px 0;font-weight:700}
+.ad{margin:6px 0;display:flex;gap:10px;align-items:flex-start}
+.ad img{width:120px;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--line);flex:none}
+.ad figcaption{font-size:13px;line-height:1.7}
+.warn{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:8px 10px;font-size:13px}
+.action{border-right:5px solid var(--acc)}
+.full{border:2px solid var(--acc)}
+.price{display:flex;justify-content:space-between;align-items:center;background:var(--acc2);border-radius:10px;padding:8px 10px;margin-top:8px}
+.price b{font-size:20px;color:var(--acc)}
+.price .vs{font-size:12px;color:var(--mute);max-width:150px}
+.sample{display:block;text-align:center;font-size:13px}
+.legal{font-size:11px;color:var(--mute);text-align:center}
+footer{font-size:11px;color:var(--mute);text-align:center;padding:8px 0 20px}
+</style></head>
+<body><div class="wrap">
+<header>
+  <div class="brand">مورفو</div>
+  <h1>لمحة عن سوقك</h1>
+  <p>عطور شجاع · فئة العطور · 25 أكتوبر 2026</p>
+  <span class="draft">نموذج أولي، والنصوص مسودة</span>
+</header>
+
+<section class="card preview">
+  <div class="tag">معاينة قبل رمز التحقق</div>
+  <h2>متجرك في فئة <b>العطور</b></h2>
+  <div class="big">72 – 126 <small>مليون ريال شهرياً</small></div>
+  <p class="lead">تقدير حجم مبيعات العطور أونلاين في السعودية، وينمو بين 4% و8% سنوياً.</p>
+  <div class="pill">رصدنا <b>8</b> منافسين يعلنون الآن على ميتا، لديهم <b>643</b> إعلاناً نشطاً</div>
+  <button class="cta" type="button">أدخل رقم جوالك لترى موقع متجرك</button>
+  <p class="src">المصادر: تقديرات حجم السوق في البطاقة 1، ومكتبة إعلانات ميتا (السعودية) بتاريخ 25 أكتوبر 2026.</p>
+</section>
+
+<section class="card">
+  <div class="num">1</div><h3>حجم سوقك</h3>
+  <div class="big">72 – 126 <small>مليون ريال شهرياً</small></div>
+  <p>مبيعات العطور أونلاين في السعودية، محسوبة كحصة من سوق أكبر:</p>
+  <ul>
+    <li>سوق التجميل والعطور أونلاين في السعودية: 3.1 مليار ريال في 2025.</li>
+    <li>حصة العطور منه بين 28% (مقياس أمريكي) و49% (مقياس خليجي للفئة الفاخرة).</li>
+    <li>النتيجة: 0.9 – 1.5 مليار ريال سنوياً.</li>
+  </ul>
+  <p class="note">طريقة ثانية (كل سوق العطور × حصة الشراء أونلاين 13%–32%) تعطي 80 – 350 مليون ريال شهرياً. الفرق كبير لأن تقديرات حجم سوق العطور تختلف بين جهات البحث (7.3 إلى 13.1 مليار ريال).</p>
+  <p><b>الاتجاه:</b> نمو سنوي بين 4% و8%.</p>
+  <p><b>موسم الذروة القادم:</b> عروض نوفمبر (الجمعة البيضاء)، ثم رمضان والعيد (فبراير – مارس 2027).</p>
+  <h4>إنفاق البطاقات في المحلات على العناية الشخصية (أقرب تصنيف رسمي للعطور)، مليون ريال أسبوعياً</h4>
+  <div class="bars"><div class="bar"><span class="bl">20–26 سبتمبر</span><span class="bt"><i style="width:86%"></i></span><span class="bv">138</span></div><div class="bar"><span class="bl">27 سبتمبر – 3 أكتوبر</span><span class="bt"><i style="width:100%"></i></span><span class="bv">161</span></div><div class="bar"><span class="bl">4–10 أكتوبر</span><span class="bt"><i style="width:82%"></i></span><span class="bv">132</span></div><div class="bar"><span class="bl">11–17 أكتوبر</span><span class="bt"><i style="width:75%"></i></span><span class="bv">121</span></div></div>
+  <p class="note">آخر أسبوع أقل بـ8% من الأسبوع الذي قبله. هذا إنفاق في المحلات وليس أونلاين، ويضم العطور مع منتجات العناية الأخرى.</p>
+  <p class="src">المصادر: موردور إنتليجنس 2025 (سوق التجميل والعطور أونلاين)، سيركانا 2024 ومجموعة شلهوب 2025 (حصة العطور)، آي مارك 2026 وكين ريسيرش 2026 (سوق العطور)، فيريفايد ماركت ريسيرش 2025 (حصة الأونلاين)، البنك المركزي السعودي: نقاط البيع الأسبوعية حتى 17 أكتوبر 2026. التقدير نطاق وليس رقماً دقيقاً.</p>
+</section>
+
+<section class="card">
+  <div class="num">2</div><h3>من ياخذ الفلوس</h3>
+  <p>أكثر 8 متاجر عطور نشاطاً في الإعلان في السعودية الآن:</p>
+  <table>
+    <thead><tr><th>المتجر</th><th>إعلانات نشطة</th><th>أطول إعلان</th><th>السعر الوسيط (ريال)</th></tr></thead>
+    <tbody><tr><td><b>رسيس</b></td><td>230</td><td><a href="https://www.facebook.com/ads/library/?id=1378280123908674">56 يوماً</a></td><td>173</td></tr><tr><td><b>عساف للعطور</b></td><td>230</td><td><a href="https://www.facebook.com/ads/library/?id=860698707037913">34 يوماً</a></td><td>177</td></tr><tr><td><b>العز للعود</b></td><td>71</td><td><a href="https://www.facebook.com/ads/library/?id=1545334563446650">57 يوماً</a></td><td>154</td></tr><tr><td><b>العربية للعود</b></td><td>45</td><td><a href="https://www.facebook.com/ads/library/?id=1642910157463500">21 يوماً</a></td><td>239</td></tr><tr><td><b>نخبة العود</b></td><td>27</td><td><a href="https://www.facebook.com/ads/library/?id=983803301388253">62 يوماً</a></td><td>150</td></tr><tr><td><b>دخوني</b></td><td>20</td><td><a href="https://www.facebook.com/ads/library/?id=28716743094599558">40 يوماً</a></td><td>124</td></tr><tr><td><b>الدخيل للعود</b></td><td>14</td><td><a href="https://www.facebook.com/ads/library/?id=1743378010029793">87 يوماً</a></td><td>149</td></tr><tr><td><b>عبدالصمد القرشي</b></td><td>6</td><td><a href="https://www.facebook.com/ads/library/?id=1271529671630993">181 يوماً</a></td><td>250</td></tr></tbody>
+  </table>
+  <p class="note">«أطول إعلان» من أول 30 إعلاناً ظاهراً لكل متجر. الإعلان الذي يستمر طويلاً غالباً يبيع، لأن المعلن لا يدفع على إعلان خاسر.</p>
+  <p><b>الأقرب لك في السعر:</b> العربية للعود (239 ريال)، عبدالصمد القرشي (250 ريال)، عساف للعطور (177 ريال).</p>
+  <p class="src">المصادر: مكتبة إعلانات ميتا، السعودية، الإعلانات النشطة بتاريخ 25 أكتوبر 2026. الأسعار من أول 60 منتجاً في متجر كل منافس بالتاريخ نفسه.</p>
+</section>
+
+<section class="card">
+  <div class="num">3</div><h3>موقعك</h3>
+  <p>السعر الوسيط لمنتجاتك <b>218 ريال</b>. نصف منتجات الفئة بين 115 و250 ريال، والوسيط 160.</p>
+  <div class="scale">
+    <div class="mid" style="right:14%;width:30%"></div>
+    <div class="me" style="right:37%"><span>أنت</span></div>
+  </div>
+  <div class="scale-l"><span>50</span><span>500 ريال</span></div>
+  <div class="verdict">في الوسط، قريب من الطرف الأعلى: أغلى من 67% من منتجات المنافسين.</div>
+  <ul>
+    <li>كل منتجاتك الـ26 عليها خصم الآن، وأرخصها 149 ريال.</li>
+    <li>عطورك البخاخة بـ149 ريال، أقل من وسيط الفئة.</li>
+  </ul>
+  <p class="src">المصادر: صفحة المنتجات في متجرك و480 سعراً من متاجر المنافسين الثمانية، 25 أكتوبر 2026. الأسعار بعد الخصم.</p>
+</section>
+
+<section class="card">
+  <div class="num">4</div><h3>الإعلان الأطول عمراً في فئتك</h3>
+  <figure class="ad">
+    <img src="ad_imaa.jpg" alt="صورة الإعلان">
+    <figcaption>
+      <b>عطور ايما</b> · يعمل منذ <b>240 يوماً</b> (من 27 فبراير 2026)<br>
+      النص: «اطلب عطرك المميز من ايما بخصومات حصرية»<br>
+      العرض الظاهر: «مجموعة اليوم الوطني» بـ349 ريال<br>
+      <a href="https://www.facebook.com/ads/library/?id=858133953917856">رابط التحقق في مكتبة إعلانات ميتا</a>
+    </figcaption>
+  </figure>
+  <p><b>الثاني:</b> عبدالصمد القرشي، 181 يوماً: «خصم 50% على جميع المنتجات، وشحن مجاني عند الطلب بـ250 ريال أو أكثر، وخصم إضافي 5% بكود». <a href="https://www.facebook.com/ads/library/?id=1271529671630993">رابط التحقق</a></p>
+  <p class="note">استبعدنا إعلاناً عمره 293 يوماً لأن معلنه يبيع ساعات وهدايا مع العطور.</p>
+  <p class="src">المصدر: مكتبة إعلانات ميتا، السعودية، بحث «عطور» و«عطر» و«عود»، 25 أكتوبر 2026.</p>
+</section>
+
+<section class="card">
+  <div class="num">5</div><h3>وين تعلن</h3>
+  <p><b>نقطة التعادل لمتجرك:</b> كل ريال إعلان يجب أن يرجع <b>2.8 ريال</b> مبيعات حتى لا تخسر.</p>
+  <p class="note">افتراض: سعر الطلب 218 ريال، تكلفة المنتج 50% من السعر، الشحن 25 ريالاً، رسوم الدفع 2.5%. يبقى لك 79 ريالاً من كل طلب. غيّر الأرقام بأرقامك الحقيقية.</p>
+  <table class="roas">
+    <thead><tr><th>المنصة</th><th>كم يرجع كل ريال (قياس عالمي)</th><th>ادعاء وكالات خليجية، غير مقاس</th><th>الوصول في السعودية</th></tr></thead>
+    <tbody>
+      <tr><td><b>ميتا</b> (إنستقرام وفيسبوك)</td><td class="bad">1.57 ريال<br><small>تكلفة الطلب 142 ريال</small></td><td>4 – 9</td><td>إنستقرام 40.8%</td></tr>
+      <tr><td><b>سناب شات</b></td><td>غير متاح</td><td>3 – 7</td><td>83.6%</td></tr>
+      <tr><td><b>تيك توك</b></td><td class="bad">0.74 ريال<br><small>تكلفة الطلب 71 ريال</small></td><td>غير متاح</td><td>77%</td></tr>
+      <tr><td><b>قوقل</b> (البحث والتسوق)</td><td class="bad">2.12 ريال<br><small>أقرب فئة: الصحة والعافية</small></td><td>غير متاح</td><td>غير متاح</td></tr>
+      <tr><td><b>إكس</b></td><td>غير متاح</td><td>غير متاح</td><td>34.9%</td></tr>
+    </tbody>
+  </table>
+  <p class="warn">دراسة عالمية، ليست سعودية. الأرقام وسيط لفئة الصحة والجمال، ولا يوجد رقم منشور خاص بالعطور. كل الأرقام المقاسة أقل من نقطة تعادلك (2.8)، أي أن المتجر المتوسط عالمياً لا يربح من الطلب الأول وحده.</p>
+  <h4>تقسيم مقترح لتجربة صغيرة (1,500 ريال لمدة 14 يوماً)</h4>
+  <ul>
+    <li>سناب شات 40% (600 ريال): أعلى وصول في السعودية.</li>
+    <li>ميتا 30% (450 ريال): منافسوك الثمانية كلهم يعلنون فيها.</li>
+    <li>تيك توك 20% (300 ريال): وصول 77% وتكلفة طلب أقل عالمياً.</li>
+    <li>قوقل 10% (150 ريال): بحث باسم متجرك وأسماء عطورك.</li>
+  </ul>
+  <p><b>متى تنقل الميزانية:</b> كل أسبوع، انقل المبلغ إلى المنصة التي رجّعت 2.8 ريال أو أكثر لكل ريال. أوقف أي منصة صرفت 157 ريالاً (ضعف ما يبقى لك من الطلب) دون أي بيعة. هذه تجربة للقياس، ولا نضمن أي عائد.</p>
+  <p class="src">المصادر: تريبل ويل، مؤشرات 2025 (ميتا وتيك توك: فئة الصحة والجمال؛ قوقل: الصحة والعافية)، مدونات وكالات خليجية 2025–2026 (ادعاءات غير مقاسة)، هيئة الاتصالات والفضاء والتقنية: تقرير الإنترنت السعودي 2025 (نسبة مستخدمي الإنترنت). التحويل بسعر 3.75 ريال للدولار.</p>
+</section>
+
+<section class="card">
+  <div class="num">6</div><h3>وش يشتكي منه عملاء فئتك</h3>
+  <p>من 211 تقييماً سلبياً مكتوباً (نجمة إلى ثلاث نجوم) لعملاء 7 متاجر عطور منافسة، منها 168 شكوى:</p>
+  <div class="bars"><div class="bar"><span class="bl wide">تأخر التوصيل أو تعثّر الشحن</span><span class="bt"><i style="width:62%"></i></span><span class="bv">62%</span></div><div class="bar"><span class="bl wide">منتج ناقص أو خاطئ أو تالف عند الوصول</span><span class="bt"><i style="width:12%"></i></span><span class="bv">12%</span></div><div class="bar"><span class="bl wide">خدمة العملاء والاسترجاع</span><span class="bt"><i style="width:9%"></i></span><span class="bv">9%</span></div></div>
+  <p class="note">التوصيل وحده أكثر من نصف الشكاوى. ضعف الثبات والفوحان 5% فقط. ونسبة التقييمات السلبية عند المنافسين بين 3% و8% من كل تقييماتهم.</p>
+  <p class="src">المصدر: تقييمات العملاء المنشورة في متاجر المنافسين، نوفمبر 2025 – أكتوبر 2026. صنّفناها آلياً وراجعنا الحالات غير الواضحة. لا ننشر أسماء المقيّمين.</p>
+</section>
+
+<section class="card action">
+  <div class="num">7</div><h3>خطوة هذا الأسبوع (مجانية)</h3>
+  <p><b>ضع السعر والعرض في أول سطر من إعلانك.</b></p>
+  <p>عندك 10 إعلانات نشطة، أقدمها عمره 109 يوماً، ونصوصها مثل «اطلب الحين من عطور شجاع» بلا سعر ولا عرض. الإعلانات الأطول عمراً في فئتك تذكر رقماً: «مجموعة اليوم الوطني بـ349»، «خصم 50% وشحن مجاني فوق 250 ريال».</p>
+  <p>مثال من أسعارك: «عطرك البخاخ بـ149 ريال بدل 175». عدّل نص إعلان واحد، واترك الباقي كما هو، وقارن النقرات بعد 7 أيام.</p>
+  <p class="note">ولأن التوصيل أكثر ما يشتكي منه عملاء فئتك، اكتب مدة التوصيل المتوقعة في صفحة المنتج.</p>
+  <p class="src">المصادر: مكتبة إعلانات ميتا (صفحة متجرك وصفحات المنافسين)، وأسعار متجرك، 25 أكتوبر 2026.</p>
+</section>
+
+<section class="card full">
+  <div class="num">8</div><h3>في التقرير الكامل</h3>
+  <p>جمعنا لفئتك ومتجرك:</p>
+  <ul class="counts">
+    <li><b>643</b> إعلاناً نشطاً لـ<b>8</b> منافسين، مع نصوصها وعروضها ومدة كل إعلان.</li>
+    <li><b>480</b> سعراً من متاجر المنافسين، مقارنة بأسعار منتجاتك الـ26.</li>
+    <li><b>211</b> تقييماً سلبياً مصنّفاً، من أصل <b>199,898</b> تقييم في متاجر المنافسين.</li>
+    <li><b>30</b> معلناً في عيّنة بحث «عطور» و«عطر» و«عود».</li>
+  </ul>
+  <p>وفي التقرير: من يبيع ماذا وبكم، وكيف يبيع كل منافس، والزاوية الفارغة في السوق، وخطة 30 يوماً بميزانية ونقطة تعادل.</p>
+  <div class="price"><div><b>199 ريال</b> مرة واحدة</div><div class="vs">مقابل 1,000 – 5,500 ريال شهرياً للوكالة</div></div>
+  <button class="cta" type="button">اطلب التقرير الكامل</button>
+  <a class="sample" href="#">شاهد صفحة نموذجية من التقرير</a>
+  <p class="legal">السجل التجاري: [يُضاف] · سياسة الاسترجاع: [تُضاف بعد اعتمادها]</p>
+</section>
+<footer>مورفو · كل رقم مذكور معه مصدره وتاريخه</footer>
+</div></body></html>

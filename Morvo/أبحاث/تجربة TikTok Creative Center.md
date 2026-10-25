@@ -26,7 +26,7 @@ cost: "مجاني."
 مصدر مساند لأنماط الإعلان على مستوى القطاع، لا مصدر أساسي للفئة.
 
 ## الملفات
-- `/tmp/claude-0/-opt-nexta-team-services/6262faf6-3cd4-4f97-b846-a3e64eb0d7bc/scratchpad/ttcc/ (cc3.json، caps2.json، text2.txt، page2.png)`
+- `/opt/backups/morvo-research-raw-20261025/ttcc (cc3.json، caps2.json، text2.txt، page2.png)`
 
 ## روابط
 [[00-خريطة مورفو]] · [[TikTok Creative Center مصدرا مساندا]] · [[2026-10-25 TikTok Creative Center مصدر مساند]]

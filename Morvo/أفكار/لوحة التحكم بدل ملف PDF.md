@@ -4,7 +4,7 @@ status: منفذة
 created: 2026-10-20
 updated: 2026-10-25
 cost: ""
-source: "/tmp/claude-0/-opt-nexta-team-services/6262faf6-3cd4-4f97-b846-a3e64eb0d7bc/scratchpad/morvo-project-goals.md (Phase 2)؛ ذاكرة morvo-build-status (2026-10-23)"
+source: "Morvo/أبحاث/ملفات/morvo-project-goals.md (Phase 2)؛ ذاكرة morvo-build-status (2026-10-23)"
 ---
 
 # لوحة التحكم بدل ملف PDF
