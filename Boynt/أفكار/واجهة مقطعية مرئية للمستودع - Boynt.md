@@ -1,6 +1,6 @@
 ---
 type: idea
-status: مقترحة
+status: جديدة
 created: 2026-10-26
 source: "صالح 2026-10-26، مستلهمة من عرض demo-tower.bithrah.sa (لوحة التزام برج سَديم)"
 ---
